@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DigiToolsX - Your All-in-One Toolkit</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      background: #007BFF;
+      color: white;
+      padding: 20px 0;
+    }
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    header nav a {
+      margin: 0 15px;
+      font-weight: 500;
+    }
+
+    header .cta-button {
+      background: #FFC107;
+      color: #333;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    header .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #007BFF, #20C997);
+      color: white;
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+
+    .hero .cta-buttons a {
+      background: #FFC107;
+      color: #333;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      margin: 0 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: inline-block;
+    }
+
+    .hero .cta-buttons a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Featured Tools Section */
+    .featured-tools {
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .featured-tools h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+
+    .tool-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .tool-card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .tool-card img {
+      width: 50px;
+      margin-bottom: 15px;
+    }
+
+    .tool-card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .tool-card p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .tool-card a {
+      background: #007BFF;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: inline-block;
+    }
+
+    .tool-card a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Categories Section */
+    .categories {
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .categories h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+
+    .category-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .category-card {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .category-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .category-card img {
+      width: 50px;
+      margin-bottom: 15px;
+    }
+
+    .category-card h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .category-card p {
+      font-size: 14px;
+      color: #666;
+    }
+
+    /* How It Works Section */
+    .how-it-works {
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .how-it-works h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .step {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .step img {
+      width: 50px;
+      margin-bottom: 15px;
+    }
+
+    .step h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      font-size: 14px;
+      color: #666;
+    }
+
+    /* Testimonials Section */
+    .testimonials {
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .testimonials h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+
+    .testimonial-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .testimonial-card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .testimonial-card img {
+      width: 50px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+
+    .testimonial-card h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .testimonial-card p {
+      font-size: 14px;
+      color: #666;
+    }
+
+    /* Footer */
+    footer {
+      background: #333;
+      color: white;
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    footer .footer-links {
+      margin-bottom: 20px;
+    }
+
+    footer .footer-links a {
+      margin: 0 10px;
+      color: #FFC107;
+    }
+
+    footer .social-icons img {
+      width: 24px;
+      margin: 0 10px;
+    }
+
+    footer .newsletter input {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+
+    footer .newsletter button {
+      background: #FFC107;
+      color: #333;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    footer .newsletter button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    footer .copyright {
+      margin-top: 20px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="logo">DigiToolsX</div>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Image Tools</a>
+        <a href="#">PDF Tools</a>
+        <a href="#">Calculators</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
+      <a href="#" class="cta-button">Get Started</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Your All-in-One Toolkit for Digital Solutions</h1>
+      <p>Convert, edit, and optimize with ease using DigiToolsX.</p>
+      <div class="cta-buttons">
+        <a href="/image-tools">Try Image Tools</a>
+        <a href="/pdf-tools">Explore PDF Tools</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Tools Section -->
+  <section class="featured-tools">
+    <div class="container">
+      <h2>Popular Tools</h2>
+      <div class="tool-cards">
+        <div class="tool-card">
+          <img src="https://via.placeholder.com/50" alt="Image Compressor">
+          <h3>Image Compressor</h3>
+          <p>Reduce image size without losing quality.</p>
+          <a href="/image-compressor">Use Tool</a>
+        </div>
+        <div class="tool-card">
+          <img src="https://via.placeholder.com/50" alt="PDF Merger">
+          <h3>PDF Merger</h3>
+          <p>Combine multiple PDFs into one.</p>
+          <a href="/pdf-merger">Use Tool</a>
+        </div>
+        <div class="tool-card">
+          <img src="https://via.placeholder.com/50" alt="Calculator">
+          <h3>Calculator</h3>
+          <p>Simple and advanced calculations.</p>
+          <a href="/calculator">Use Tool</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="categories">
+    <div class="container">
+      <h2>Explore by Category</h2>
+      <div class="category-cards">
+        <div class="category-card">
+          <img src="https://via.placeholder.com/50" alt="Image Tools">
+          <h3>Image Tools</h3>
+          <p>Edit, compress, and convert images.</p>
+        </div>
+        <div class="category-card">
+          <img src="https://via.placeholder.com/50" alt="PDF Tools">
+          <h3>PDF Tools</h3>
+          <p>Merge, split, and optimize PDFs.</p>
+        </div>
+        <div class="category-card">
+          <img src="https://via.placeholder.com/50" alt="Calculators">
+          <h3>Calculators</h3>
+          <p>Simple and advanced calculators.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="how-it-works">
+    <div class="container">
+      <h2>How It Works</h2>
+      <div class="steps">
+        <div class="step">
+          <img src="https://via.placeholder.com/50" alt="Choose Tool">
+          <h3>Choose Tool</h3>
+          <p>Select the tool you need.</p>
+        </div>
+        <div class="step">
+          <img src="https://via.placeholder.com/50" alt="Upload/Input">
+          <h3>Upload/Input</h3>
+          <p>Upload your file or enter data.</p>
+        </div>
+        <div class="step">
+          <img src="https://via.placeholder.com/50" alt="Get Results">
+          <h3>Get Results</h3>
+          <p>Download or view your results instantly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <div class="container">
+      <h2>What Our Users Say</h2>
+      <div class="testimonial-cards">
+        <div class="testimonial-card">
+          <img src="https://via.placeholder.com/50" alt="User 1">
+          <h3>John Doe</h3>
+          <p>"DigiToolsX saved me so much time! Highly recommended."</p>
+        </div>
+        <div class="testimonial-card">
+          <img src="https://via.placeholder.com/50" alt="User 2">
+          <h3>Jane Smith</h3>
+          <p>"The tools are easy to use and very effective."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">FAQ</a>
+      </div>
+      <div class="social-icons">
+        <img src="https://via.placeholder.com/24" alt="Facebook">
+        <img src="https://via.placeholder.com/24" alt="Twitter">
+        <img src="https://via.placeholder.com/24" alt="Instagram">
+      </div>
+      <div class="newsletter">
+        <input type="email" placeholder="Enter your email">
+        <button>Subscribe</button>
+      </div>
+      <div class="copyright">© 2023 DigiToolsX. All rights reserved.</div>
+    </div>
+  </footer>
+</body>
+</html>
